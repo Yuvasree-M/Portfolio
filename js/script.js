@@ -42,12 +42,18 @@ function updateActiveLink() {
 window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('load', updateActiveLink);
 
-// Back to Top Button
-
+// Back to Top
 const backToTopBtn = document.getElementById("backToTop");
+backToTopBtn.style.display = "none"; // Always hide on load
+
 window.addEventListener('scroll', () => {
-  backToTopBtn.style.display = (window.scrollY > 100) ? "flex" : "none";
+  if (window.scrollY > 250) {
+    backToTopBtn.style.display = "flex";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
 });
+
 backToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
