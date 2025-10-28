@@ -86,6 +86,63 @@ if (contactForm) {
   });
 }
 
+// Download Resume
+const resumeButton = document.getElementById("resumeDownload");
+const notifyForm = document.getElementById("notify-form");
+const resumeUrl = "resume/Yuvasreee M Resume.pdf";
+
+
+resumeButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  const modal = new bootstrap.Modal(document.getElementById("notifyModal"));
+  modal.show();
+});
+
+
+notifyForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_9adnqu2", "template_9v74efa", this)
+    .then(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Thank you!',
+        confirmButtonColor: '#5BC0BE'
+      });
+
+
+      const link = document.createElement('a');
+      link.href = resumeUrl;
+      link.download = 'Yuvasree_M_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+    
+      bootstrap.Modal.getInstance(document.getElementById("notifyModal")).hide();
+      this.reset();
+    })
+    .catch(err => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops!',
+        text: 'Something went wrong. Try again later.',
+        confirmButtonColor: '#3A506B'
+      });
+      console.error('EmailJS error:', err);
+    });
+});
+
+
+document.querySelector('#notifyModal .btn-outline-secondary')
+  .addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'Yuvasree_M_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
 document.addEventListener("DOMContentLoaded", () => {
   const scrollWrapper = document.querySelector(".projects-scroll-wrapper");
   if (!scrollWrapper) return;

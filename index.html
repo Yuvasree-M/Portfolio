@@ -28,11 +28,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
         <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
         <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#certificates">Certification</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certificates">Certification</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -43,7 +43,7 @@
 <section id="hero" class="hero-section">
   <div class="hero-image">
     <div class="image-wrapper">
-      <img src="assets/images/profile.jpeg" alt="Yuva Mohan">
+      <img src="assets/images/profile.jpeg" alt="Yuvasree Mohanasundaram">
     </div>
   </div>
 
@@ -52,13 +52,10 @@
     <h1>Yuvasree Mohanasundaram</h1>
     <h2><span class="highlight">Full Stack Developer</span></h2>
     <p>
-      I build thoughtful web applications that blend solid backend logic with clean, intuitive design. 
-      Most of my work revolves around <strong>Java</strong>, <strong>Spring Boot</strong>, and <strong>Thymeleaf</strong>, 
-      connecting structured data with smooth user experiences.  
-      From developing <em>Mobi.comm</em> for mobile recharges to <em>ServiceXpress</em> for vehicle management, 
-      I enjoy turning real-world needs into reliable digital solutions.
+      I build thoughtful web applications that connect strong backend logic with simple, engaging interfaces.
+      Most of my work centers on <strong>Java</strong>, <strong>Spring Boot</strong>, and <strong>Thymeleaf</strong>,
+      transforming real-world problems into functional, scalable digital solutions.
     </p>
-    
 
     <div class="hero-socials">
       <a href="https://www.linkedin.com/in/yuvasree-mohanasundaram-200145229" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -66,11 +63,46 @@
       <a href="mailto:yuvasreemohan4sep2003@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
       <a href="tel:+919488018781" aria-label="Phone"><i class="fas fa-phone"></i></a>
     </div>
-    
 
-    <a href="resume/Yuvasreee M Resume.pdf" class="btn-glow" download>Download CV</a>
-    <a href="#projects" class="btn-glow">View Projects</a>
+    <div class="mt-4">
+      <a href="resume/Yuvasreee M Resume.pdf" id="resumeDownload" class="btn-glow" download>Download CV</a>
+      <a href="#projects" class="btn-glow">View Projects</a>
+    </div>
   </div>
+</section>
+
+<!-- Optional Email Modal -->
+<div class="modal fade" id="notifyModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:12px;">
+      <div class="modal-header" style="background:#3A506B;color:white;">
+        <h5 class="modal-title">Get a Copy of My Resume</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body text-center">
+        <p>
+          Thank you for your interest!  
+          You can download my resume directly below.  
+          If you’d like, please share your <strong>name</strong> and <strong>email</strong> —  
+          it helps me stay connected with professionals and recruiters like you.  
+          (Sharing is optional.)
+        </p>
+
+        <form id="notify-form">
+          <input type="text" name="from_name" class="form-control mb-2" placeholder="Your Name">
+          <input type="email" name="from_email" class="form-control mb-3" placeholder="Your Email">
+          
+          <div class="d-flex justify-content-center gap-2">
+            <button type="submit" class="btn btn-primary">Share & Download</button>
+            <button type="button" id="skipDownload" class="btn btn-outline-secondary">Download Without Info</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <div class="corner top-left"></div>
   <div class="corner top-right"></div>
@@ -273,7 +305,7 @@
         </div>
         <h5 class="text-center fw-bold">Mobile Prepaid Recharge Application - Mobi.comm</h5>
         <div class="mt-2 text-center">
-          <a href="#" class="btn btn-outline-primary btn-sm me-2">GitHub</a>
+          <a href="https://github.com/Yuvasree-M/Mobicom_Application" target="_blank" class="btn btn-outline-primary btn-sm me-2">GitHub</a>
           <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#mobiModal">View More</button>
         </div>
       </div>
@@ -291,7 +323,7 @@
         </div>
         <h5 class="text-center fw-bold">E-Commerce Platform - Organic Spices</h5>
         <div class="mt-2 text-center">
-          <a href="#" class="btn btn-outline-primary btn-sm me-2">GitHub</a>
+          <a href="https://github.com/Yuvasree-M/Organic-Spices" target="_blank" class="btn btn-outline-primary btn-sm me-2">GitHub</a>
           <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#organicModal">View More</button>
         </div>
       </div>
@@ -309,7 +341,7 @@
         </div>
         <h5 class="text-center fw-bold">Vehicle Service Management System - ServiceXpress</h5>
         <div class="mt-2 text-center">
-          <a href="#" class="btn btn-outline-primary btn-sm me-2">GitHub</a>
+          <a href="https://github.com/Yuvasree-M/ServiceXpress" target="_blank" class="btn btn-outline-primary btn-sm me-2">GitHub</a>
           <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#serviceModal">View More</button>
         </div>
       </div>
@@ -327,7 +359,7 @@
         </div>
         <h5 class="text-center fw-bold">Personal Portfolio Website</h5>
         <div class="mt-2 text-center">
-          <a href="#" class="btn btn-outline-primary btn-sm me-2">GitHub</a>
+          <a href="https://github.com/Yuvasree-M/Portfolio" target="_blank" class="btn btn-outline-primary btn-sm me-2">GitHub</a>
           <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal">View More</button>
         </div>
       </div>
@@ -354,7 +386,7 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <a href="#" class="btn btn-outline-primary">View GitHub</a>
+        <a href="https://github.com/Yuvasree-M/Mobicom_Application" target="_blank" class="btn btn-outline-primary">View GitHub</a>
         <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
@@ -378,7 +410,8 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <a href="#" class="btn btn-outline-primary">View GitHub</a>
+        <a href="https://github.com/Yuvasree-M/Organic-Spices" target="_blank" class="btn btn-outline-primary">View GitHub</a>
+        <a href="https://yuvasree-m.github.io/Organic-Spices"  target="_blank" class="btn btn-primary">Visit Website</a>
         <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
@@ -402,7 +435,7 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <a href="#" class="btn btn-outline-primary">View GitHub</a>
+        <a href="https://github.com/Yuvasree-M/ServiceXpress" target="_blank" class="btn btn-outline-primary">View GitHub</a>
         <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
@@ -420,13 +453,14 @@
         <img src="assets/images/project4_1.png" class="img-fluid rounded mb-3" alt="">
         <ul>
           <li>Designed and developed a personal portfolio using <strong>HTML, CSS, JS, AOS</strong>.</li>
-          <li>Implemented smooth animations and scroll effects for engaging user flow.</li>
+          <li>git Implemented smooth animations and scroll effects for engaging user flow.</li>
           <li>Integrated responsive layouts compatible with all screen sizes.</li>
           <li>Deployed and hosted using <strong>GitHub Pages</strong>.</li>
         </ul>
       </div>
       <div class="modal-footer">
-        <a href="#" class="btn btn-outline-primary">View GitHub</a>
+        <a href="https://github.com/Yuvasree-M/Portfolio" target="_blank" class="btn btn-outline-primary">View GitHub</a>
+        <a href="https://yuvasree-m.github.io/Portfolio" target="_blank" class="btn btn-primary">Visit Website</a>
         <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
@@ -477,12 +511,12 @@
         <form id="contact-form" class="text-center">
           <div class="mb-3 text-start">
             <label class="form-label">Your Name</label>
-            <input type="text" name="from_name" class="form-control" required>
+            <input type="text" name="name" class="form-control" required>
           </div>
         
           <div class="mb-3 text-start">
             <label class="form-label">Your Email</label>
-            <input type="email" name="from_email" class="form-control" required>
+            <input type="email" name="email" class="form-control" required>
           </div>
         
           <div class="mb-3 text-start">
