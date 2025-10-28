@@ -44,7 +44,7 @@ window.addEventListener('load', updateActiveLink);
 
 // Back to Top
 const backToTopBtn = document.getElementById("backToTop");
-backToTopBtn.style.display = "none"; // Always hide on load
+backToTopBtn.style.display = "none";
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 250) {
@@ -149,28 +149,33 @@ document.querySelector('#notifyModal .btn-outline-secondary')
     link.click();
     document.body.removeChild(link);
   });
-document.addEventListener("DOMContentLoaded", () => {
-  const scrollWrapper = document.querySelector(".projects-scroll-wrapper");
-  if (!scrollWrapper) return;
 
-  let scrollSpeed = 0.5; 
-  let isPaused = false;
+  document.addEventListener("DOMContentLoaded", () => {
+    const scrollWrapper = document.querySelector(".projects-scroll-wrapper");
+    if (!scrollWrapper) return;
+  
+    const scrollSpeed = 0.8; 
+    let isPaused = false;
 
-  const cards = Array.from(scrollWrapper.children);
-  cards.forEach(card => scrollWrapper.appendChild(card.cloneNode(true)));
-
-  function autoScroll() {
-    if (!isPaused) {
-      scrollWrapper.scrollLeft += scrollSpeed;
-      if (scrollWrapper.scrollLeft >= scrollWrapper.scrollWidth / 2) {
-        scrollWrapper.scrollLeft = 0;
+    const cards = Array.from(scrollWrapper.children);
+    cards.forEach(card => {
+      const clone = card.cloneNode(true);
+      scrollWrapper.appendChild(clone);
+    });
+  
+    function autoScroll() {
+      if (!isPaused) {
+        scrollWrapper.scrollLeft += scrollSpeed;
+  
+        if (scrollWrapper.scrollLeft >= scrollWrapper.scrollWidth / 2) {
+          scrollWrapper.scrollLeft -= scrollWrapper.scrollWidth / 2;
+        }
       }
+      requestAnimationFrame(autoScroll);
     }
-    requestAnimationFrame(autoScroll);
-  }
-
-  scrollWrapper.addEventListener("mouseenter", () => (isPaused = true));
-  scrollWrapper.addEventListener("mouseleave", () => (isPaused = false));
-
-  autoScroll();
-});
+    scrollWrapper.addEventListener("mouseenter", () => (isPaused = true));
+    scrollWrapper.addEventListener("mouseleave", () => (isPaused = false));
+  
+    autoScroll();
+  });
+  

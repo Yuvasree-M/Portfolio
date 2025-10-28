@@ -636,23 +636,40 @@ body {
   margin-bottom: 15px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  [data-aos] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+
+
   .hero-section {
-    flex-direction: column; 
+    flex-direction: column;
     text-align: center;
     padding: 40px 20px;
   }
 
   .hero-image {
-    order: -1;
-    margin-bottom: 20px;
+    order: -1; 
+    margin-bottom: 25px;
   }
 
   .image-wrapper {
-    width: 180px;
-    height: 180px;
+    width: 220px;  
+    height: 220px;
+    border-radius: 20%; 
     border-width: 3px;
-    box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+    box-shadow: 0 0 12px rgba(0, 217, 255, 0.5);
+    animation: none; 
+  }
+
+  .image-wrapper img {
+    border-radius: 20%;
   }
 
   .hero-content h1 {
@@ -672,6 +689,11 @@ body {
     height: 32px;
     font-size: 0.9rem;
   }
+
+  .skill-card, .project-card, .hero-image, .image-wrapper {
+    will-change: transform, opacity;
+  }
+
   .projects-scroll-wrapper {
     padding-left: 5px;
   }
@@ -680,6 +702,9 @@ body {
   }
   .skill-card {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  #skills::before {
+    display: none;
   }
 
   .skill-icon {
